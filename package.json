@@ -36,7 +36,7 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@sveltejs/kit": "^1.0.0-next.162",
+    "@sveltejs/kit": "^2.0.2",
     "@tsconfig/svelte": "2.0.1",
     "@types/cookie": "^0.4.1",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
@@ -46,7 +46,7 @@
     "rollup": "^2.56.3",
     "rollup-plugin-svelte": "^7.1.0",
     "sirv-cli": "^1.0.14",
-    "svelte": "^3.42.4",
+    "svelte": "^4.0.5",
     "tslib": "2.3.1",
     "typedoc": "^0.21.9",
     "typescript": "4.3.5"
@@ -67,12 +67,14 @@
     "dist"
   ],
   "peerDependencies": {
-    "svelte": "^3.42.3"
+    "svelte": "^4.0.5"
   },
   "dependencies": {
+    "@sveltejs/kit": "^2.0.2",
     "cookie": "^0.4.1",
     "js-base64": "^3.6.1",
     "js-cookie": "^3.0.1",
-    "pkce": "^1.0.0-beta2"
+    "pkce": "^1.0.0-beta2",
+    "svelte-preprocess": "^5.1.3"
   }
 }

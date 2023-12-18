@@ -1,16 +1,16 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "docs/*", "dist/*"],
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
     "inlineSourceMap": false,
     "declarationMap": false,
     "emitDeclarationOnly": false,
     "declaration": true,
     "declarationDir": "types",
     "sourceMap": false,
-    "types": ["svelte"],
+    
     "module": "esNext",
     "target": "esnext",
     "moduleResolution": "node",
