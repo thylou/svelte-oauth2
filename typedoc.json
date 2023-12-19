@@ -1,8 +1,0 @@
-{
-  "entryPoints": ["src/"],
-  "excludePrivate": true,
-  "excludeProtected": true,
-  "disableSources": true,
-  "excludeNotDocumented": false,
-  "excludeExternals": true
-}
