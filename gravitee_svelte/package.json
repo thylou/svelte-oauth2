@@ -2,27 +2,67 @@
   "name": "gravitee_svelte",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "svelte": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "svlete": "./src/Component.svelte"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c -w",
+    "doc": "typedoc src/index.ts",
+    "prebuild": "tsc --emitDeclarationOnly",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "lint": "eslint src/",
+    "pretest:svelte": "rollup -c rollup.test.config.js",
+    "pretest:sveltekit": "npm run build",
+    "test:svelte": "sirv tests/svelte",
+    "test:sveltekit": "cd tests/sk; npm run dev",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "gravitee",
     "oAuth2",
     "svlete"
   ],
- 
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@sveltejs/kit": "^2.0.2",
-    "rollup": "^4.9.1",
+    "@macfja/rollup-plugin-prompt-replace": "^1.0.1",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@sveltejs/kit": "^2.0.3",
+    "@tsconfig/svelte": "2.0.1",
+    "@types/cookie": "^0.4.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "rollup": "^2.56.3",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^7.1.6",
+    "sirv-cli": "^1.0.14",
+    "svelte": "^4.2.8",
+    "tslib": "2.3.1",
+    "typedoc": "^0.21.9",
+    "typescript": "4.3.5"
+  },
+  "peerDependencies": {
     "svelte": "^4.2.8"
+  },
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "js-base64": "^3.6.1",
+    "js-cookie": "^3.0.5",
+    "pkce": "^1.0.0-beta2",
+    "svelte": "^4.2.8",
+    "svelte-preprocess": "^5.1.3"
   }
 }
